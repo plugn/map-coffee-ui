@@ -1,0 +1,43 @@
+/**
+ * @title FlexLayout
+ * @author github.com/plugn
+ */
+
+.flex-row {
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-direction: row;
+	flex-direction: row;
+	min-height: 0;
+	width: 100%;
+}
+
+.flex-col {
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	min-width: 0;
+	height: 100%;
+}
+.flex-row > .flex-row,
+.flex-row > .flex-col,
+.flex-col > .flex-row,
+.flex-col > .flex-col {
+	-ms-flex: 1;
+	flex: 1;
+}
+.flex-row .stretch, .flex-col .stretch {
+	-ms-flex: 1;
+	flex: 1;
+}
+.flex-row .scroll, .flex-col .scroll {
+	overflow: auto;
+}
+.flex-row .scroll-x, .flex-col .scroll-x {
+	overflow-x: auto;
+}
+.flex-row .scroll-y, .flex-col .scroll-y {
+	overflow-y: auto;
+}
+

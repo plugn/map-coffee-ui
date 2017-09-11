@@ -1,66 +1,77 @@
 <template>
-  <div id="app">
-    <img class="logo" src="./assets/logo.png">
-    <hello></hello>
-    <p>
-      Welcome to your Vue.js app!
-    </p>
-    <p>
-      To get a better understanding of how this boilerplate works, check out
-      <a href="http://vuejs-templates.github.io/webpack" target="_blank">its documentation</a>.
-      It is also recommended to go through the docs for
-      <a href="http://webpack.github.io/" target="_blank">Webpack</a> and
-      <a href="http://vuejs.github.io/vue-loader/" target="_blank">vue-loader</a>.
-      If you have any issues with the setup, please file an issue at this boilerplate's
-      <a href="https://github.com/vuejs-templates/webpack" target="_blank">repository</a>.
-    </p>
-    <p>
-      You may also want to checkout
-      <a href="https://github.com/vuejs/vue-router/" target="_blank">vue-router</a> for routing and
-      <a href="https://github.com/vuejs/vuex/" target="_blank">vuex</a> for state management.
-    </p>
-  </div>
+	<div id="app" class="flex-col">
+
+		<header class="keyline-bottom keyline-lighten0 title3d">map.coffee</header>
+		<div class="stretch" style="position: relative;">
+			<MapGL></MapGL>
+		</div>
+
+	</div>
 </template>
 
 
-
 <script>
-import Hello from './components/Hello'
+	import MapGL from './components/Map/Map.vue'
 
-export default {
-  components: {
-    Hello
-  }
-}
+	export default {
+		components: {
+			MapGL
+		}
+	}
 </script>
 
 <style>
-html {
-  height: 100%;
-}
+	html {
+		height: 100%;
+	}
 
-body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-}
+	#app {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		height: 100%;
+		width: 100%;
+	}
 
-#app {
-  color: #2c3e50;
-  margin-top: -100px;
-  max-width: 600px;
-  font-family: Source Sans Pro, Helvetica, sans-serif;
-  text-align: center;
-}
+	.keyline-bottom {
+		border-bottom-width: 1px;
+		border-bottom-style: solid;
+		border-bottom-color: rgba(0, 0, 0, 0.1);
+	}
 
-#app a {
-  color: #42b983;
-  text-decoration: none;
-}
+	.dark .keyline-lighten0, .keyline-lighten0 {
+		border-top-color: rgba(255, 255, 255, 0.1);
+		border-right-color: rgba(255, 255, 255, 0.1);
+		border-bottom-color: rgba(255, 255, 255, 0.1);
+		border-left-color: rgba(255, 255, 255, 0.1);
+	}
 
-.logo {
-  width: 100px;
-  height: 100px
-}
+	header {
+		font-size: 2rem;
+		line-height: 2rem;
+		text-align: right;
+		background-color: rgb(89, 91, 91);
+		color: rgb(255, 255, 255);
+		min-height: 50px;
+	}
+
+	.title3d {
+		padding-top: 0px;
+		padding-right: 1.25rem;
+		padding-bottom: 0px;
+		padding-left: 1.25rem;
+		height: 3rem;
+		line-height: 3rem;
+		letter-spacing: 1px;
+		color: rgb(198, 200, 200);
+		text-shadow: rgba(0, 0, 0, 0.69) 0px -1px;
+	}
+
+	.fill-canvas {
+		background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAQAAAAngNWGAAAAGElEQVR4AWNgkMECsQA6KxxVOFjdPaoQAAMRFeEKd2mnAAAAAElFTkSuQmCC);
+		background-size: 10px 10px
+	}
+
 </style>
